@@ -1,3 +1,6 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import LogGroup, Log
+
+admin.site.register(Log)
+admin.site.register(LogGroup)
