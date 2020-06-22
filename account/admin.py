@@ -4,6 +4,8 @@ from .models import User
 
 
 class CustomUserAdmin(UserAdmin):
-    pass
+    fieldsets = UserAdmin.fieldsets + (
+        (None, {'fields': ("secret_key", "public_key")}),
+    )
 
 admin.site.register(User, CustomUserAdmin)

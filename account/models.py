@@ -1,19 +1,20 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.db.models.signals import post_save
+from django.utils.crypto import get_random_string
 
 
 def generate_key(model_field, model, prefix=""):
 
     while True:
-        key = f'{prefix}_{get_random_string(32)}'
+        key = f"{prefix}_{get_random_string(32)}"
         if model and model_field:
             data = {}
             data[model_field] = key
-            if not self.objects.filter(**data):
+            if not model.objects.filter(**data):
                 break
 
-    return api_key
+    return key
 
 
 class User(AbstractUser):
