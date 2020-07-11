@@ -54,7 +54,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'taylogger.middleware.ErrorLoggerMiddleware'
+    # 'taylogger.middleware.ErrorLoggerMiddleware'
 ]
 
 ROOT_URLCONF = 'TayLoggerAPI.urls'
