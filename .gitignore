@@ -130,3 +130,7 @@ dmypy.json
 
 # Jetbrain IDE cache folder
 .idea/
+
+data.json
+taylogger
+taylogger/

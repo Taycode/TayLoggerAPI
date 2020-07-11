@@ -4,6 +4,7 @@ from rest_framework import status
 from rest_framework.permissions import IsAuthenticated
 
 from .serializers import LogGroupSerializer, LogSerializer
+from .models import Log
 
 
 class CreateLogGroup(APIView):
@@ -34,3 +35,12 @@ class CreateLog(APIView):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class GetLog(APIView):
+
+    @staticmethod
+    def get(request, pk):
+        log = Log.objects.get(id=pk)
+        serializer = LogSerializer(log)
+        return Response(serializer.data, status=status.HTTP_200_OK)

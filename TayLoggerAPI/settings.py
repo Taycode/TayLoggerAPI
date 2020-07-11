@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'logger',
     'rest_framework',
     'account',
-    'rest_framework.authtoken'
+    'rest_framework.authtoken',
+    # 'taylogger',
 ]
 
 MIDDLEWARE = [
@@ -53,6 +54,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'taylogger.middleware.ErrorLoggerMiddleware'
 ]
 
 ROOT_URLCONF = 'TayLoggerAPI.urls'
@@ -130,8 +132,13 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
+# EXCEPTION_GROUP_ID = 2
+# TAYLOGGER_API_KEY = "efded9a87c6f7dc3d4811187c522e37f8fcff0ba"
+
 
 STATIC_URL = '/static/'
 CORS_ORIGIN_ALLOW_ALL = True
 
 AUTH_USER_MODEL = 'account.User'
+
+
